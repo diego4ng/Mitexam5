@@ -13,7 +13,7 @@ import UIKit
 import Parse
 
 class ArrayData{
-    
+    //Se crea un Array para guardar los datos y despues mostrarlos en la tabla 
     var FechaArray: [String] = []
     
     init() {
