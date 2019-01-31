@@ -92,6 +92,24 @@ class ViewController: UIViewController {
     }
     
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        self.view.endEditing(true)
+        
+        return true
+        
+    }
+    
+    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        UserIngresar.resignFirstResponder()
+        PasswordIngresar.resignFirstResponder()
+        UserRegistro.resignFirstResponder()
+        PasswordRgistro.resignFirstResponder()
+        
+    }
+
+    
     }
 
 
