@@ -13,27 +13,36 @@ import Parse
 
 class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  {
    
+    var FechaArray: [String] = []
+    var MotivodepagoArray: [String] = []
+    var NombreDestArray: [String] = []
+    //var TarjetaDestArray: [String] = []
+   // var TarjetaConfArray: [String] = []
+    var TarjetaDestArray: [String] = []
     
-    var todoList: ArrayData
     
-    required init?(coder aDecoder: NSCoder) {
-        todoList = ArrayData()
-        super.init(coder: aDecoder)
-    }
+    @IBOutlet weak var movimientos_table: UITableView!
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-       return todoList.FechaArray.count
+       return FechaArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:tablecell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! tablecell
         
-//       let fecha = todoList.FechaArray[indexPath.row]
-//       cell = fecha.text
+     let fecha = self.FechaArray[indexPath.row]
+     let motivo = self.MotivodepagoArray[indexPath.row]
+//    let nombred = self.NombreDestArray[indexPath.row]
+//        let tarjetad = self.TarjetaDestArray[indexPath.row]
+//
+        cell.cell_Fecha.text = fecha
+        cell.cell_MotivodePago.text = motivo
+//        cell.cell_NombreDestinatario.text = nombred
+//        cell.cell_TarjetaDestinatario.text = tarjetad
         
+   
         
         return cell
     }
@@ -46,27 +55,134 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
         super.viewDidLoad()
 
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
-//        func userKcal(completion: ([String]) -> ()) {
-//            let query = PFQuery(className: "Movimientos")
-//            query.whereKey("userPointer", equalTo: PFUser.current()!)
-//            query.findObjectsInBackground { (objects, error) in
-//                if let returnedObjects = objects {
-//                    for object in returnedObjects {
-//                        let kcal = object["kcal"] as? String
-//                        self.strings.append(kcal!)
-//                    }
-//                }
-//                completion(self.strings)
-//            }
-//        }
+        retrieveFecha()
+        retrieveMotivoPago()
+//        retrieveNombreDest()
+//        retrieveTarjetaDest()
+        //retrieveTarjetaDest()
+        //retrieveTarjetaConf()
 
 
     }
     
     
+    func retrieveFecha() {
+        let FechaArray: [String] = []
+        let query = PFQuery(className: "Movimientos")
+        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+        query.findObjectsInBackground(block: { (objects, error) in
+            
+            if error == nil{
+                //no hay errot
+                if let returnedobjects = objects {
+                    
+                    for object in returnedobjects{
+                        self.FechaArray.append(object["Fecha"] as! String)
+                        print(object["Fecha"] as! String)
+                        print(FechaArray)
+                        print(FechaArray.count)
+                    }
+                    
+                }
+                self.movimientos_table.reloadData()
+            }})
+    
+    
 }
 
+    
+    
+    func retrieveMotivoPago() {
+        let MotivodepagoArray: [String] = []
+        let query = PFQuery(className: "Movimientos")
+        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+        query.findObjectsInBackground(block: { (objects, error) in
+
+            if error == nil{
+                //no hay errot
+                if let returnedobjects = objects {
+
+                    for object in returnedobjects{
+                        self.MotivodepagoArray.append(object["MotivodePago"] as! String)
+                        print(object["MotivodePago"] as! String)
+
+                    }
+
+                }
+                self.movimientos_table.reloadData()
+            }})
 
 
+    }
+    
+//        func retrieveNombreDest() {
+//            let NombreDestArray: [String] = []
+//            let query = PFQuery(className: "Movimientos")
+//            query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+//            query.findObjectsInBackground(block: { (objects, error) in
+//
+//                if error == nil{
+//                    //no hay errot
+//                    if let returnedobjects = objects {
+//
+//                        for object in returnedobjects{
+//                            self.NombreDestArray.append(object["NombreDestinatario"] as! String)
+//                            print(object["NombreDestinatario"] as! String)
+//
+//                        }
+//
+//                    }
+//                    self.movimientos_table.reloadData()
+//                }})
+//
+//
+//        }
+
+    
+//    func retrieveTarjetaDest() {
+//        let TarjetaDestArray: [String] = []
+//        let query = PFQuery(className: "Movimientos")
+//        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+//        query.findObjectsInBackground(block: { (objects, error) in
+//
+//            if error == nil{
+//                //no hay errot
+//                if let returnedobjects = objects {
+//
+//                    for object in returnedobjects{
+//                        self.TarjetaDestArray.append(object["TarjetaDestinatario"] as! String)
+//                        print(object["TarjetaDestinatario"] as! String)
+//
+//                    }
+//
+//                }
+//                self.movimientos_table.reloadData()
+//            }})
+//
+//
+//    }
+//    func retrieveTarjetaDest() {
+//        let TarjetaDestArray: [String] = []
+//        let query = PFQuery(className: "Movimientos")
+//        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+//        query.findObjectsInBackground(block: { (objects, error) in
+//
+//            if error == nil{
+//                //no hay errot
+//                if let returnedobjects = objects {
+//
+//                    for object in returnedobjects{
+//                        self.TarjetaDestArray.append(object["TarjetaDestinatario"] as! String)
+//                        print(object["TarjetaDestinatario"] as! String)
+//
+//                    }
+//
+//                }
+//                self.movimientos_table.reloadData()
+//            }})
+//
+//
+//    }
+   
+
+}

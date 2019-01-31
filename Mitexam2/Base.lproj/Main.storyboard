@@ -489,6 +489,9 @@
                         <viewLayoutGuide key="safeArea" id="NHB-t9-ZQh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Cnr-ah-ggf"/>
+                    <connections>
+                        <outlet property="movimientos_table" destination="gmr-hp-lQd" id="lZS-wz-CE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcM-JN-1g3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -634,11 +637,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fondo" width="781" height="1389"/>
-        <image name="botton Movimientp" width="222" height="225"/>
-        <image name="botton Registro" width="148" height="34"/>
-        <image name="botton Tarjetas" width="222" height="219"/>
-        <image name="botton iniciasesion" width="203" height="49"/>
-        <image name="botton pagar" width="222" height="221"/>
+        <image name="Fondo" width="375.1199951171875" height="667"/>
+        <image name="botton Movimientp" width="106.80000305175781" height="108"/>
+        <image name="botton Registro" width="106.80000305175781" height="24.719999313354492"/>
+        <image name="botton Tarjetas" width="106.80000305175781" height="105.36000061035156"/>
+        <image name="botton iniciasesion" width="97.680000305175781" height="23.760000228881836"/>
+        <image name="botton pagar" width="106.80000305175781" height="106.08000183105469"/>
     </resources>
 </document>
