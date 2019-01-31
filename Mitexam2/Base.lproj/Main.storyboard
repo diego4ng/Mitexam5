@@ -396,26 +396,26 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarjeta Configurada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc1-6V-jvM">
-                                                    <rect key="frame" x="173" y="26" width="180" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="173" y="26" width="180" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Destinatario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-p5-PAS">
-                                                    <rect key="frame" x="173" y="69" width="190" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="173" y="68" width="190" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarjeta Destinatario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmk-6a-q6H">
                                                     <rect key="frame" x="173" y="92" width="190" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivo de Pago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2O-KA-GOe">
                                                     <rect key="frame" x="173" y="121" width="190" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -430,6 +430,7 @@
                                                 <constraint firstItem="yc1-6V-jvM" firstAttribute="top" secondItem="DT9-7Q-Vtt" secondAttribute="topMargin" constant="15" id="7Ec-5P-OG7"/>
                                                 <constraint firstItem="mIX-p5-PAS" firstAttribute="centerX" secondItem="B2O-KA-GOe" secondAttribute="centerX" id="8iZ-hY-Rd4"/>
                                                 <constraint firstItem="B2O-KA-GOe" firstAttribute="top" secondItem="6qS-KT-4a0" secondAttribute="bottom" constant="8" id="Aic-qT-Vvd"/>
+                                                <constraint firstItem="yc1-6V-jvM" firstAttribute="baseline" secondItem="gOw-2H-Uje" secondAttribute="baseline" id="B4V-CQ-HHr"/>
                                                 <constraint firstItem="yc1-6V-jvM" firstAttribute="leading" secondItem="gOw-2H-Uje" secondAttribute="trailing" constant="26" id="Dpv-bh-D3K"/>
                                                 <constraint firstItem="B2O-KA-GOe" firstAttribute="top" secondItem="Dmk-6a-q6H" secondAttribute="bottom" constant="8" id="FBI-Pt-76j"/>
                                                 <constraint firstItem="6Ux-yz-SwW" firstAttribute="leading" secondItem="DT9-7Q-Vtt" secondAttribute="leadingMargin" constant="7" id="Ivb-t5-i6i"/>
