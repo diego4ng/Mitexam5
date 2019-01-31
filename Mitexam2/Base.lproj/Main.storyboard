@@ -21,39 +21,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" image="Fondo" translatesAutoresizingMaskIntoConstraints="NO" id="G5c-4G-ckK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8V-QQ-ghe">
-                                <rect key="frame" x="65" y="336" width="244" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="BIN-5O-wjO"/>
-                                    <constraint firstAttribute="width" constant="244" id="DO2-iy-dAN"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="244" id="DPH-5H-om3"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="jjb-Sr-zBh"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tW9-kX-YEl"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsO-EK-KFi">
-                                <rect key="frame" x="63" y="374" width="248" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="KAX-cr-NfU"/>
-                                    <constraint firstAttribute="width" constant="248" id="Lza-b5-dPh"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BoW-hv-SzG"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZD-Kb-tKc">
-                                <rect key="frame" x="113" y="255" width="149" height="35"/>
+                                <rect key="frame" x="34" y="313" width="149" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Ynr-Eg-VVE"/>
-                                    <constraint firstAttribute="width" constant="149" id="aH5-4N-aZU"/>
+                                    <constraint firstAttribute="width" constant="149" id="T6h-Mo-HjS"/>
+                                    <constraint firstAttribute="height" constant="35" id="fN2-kz-zoY"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="botton iniciasesion"/>
                                 <connections>
@@ -61,10 +33,10 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLl-tT-bLk">
-                                <rect key="frame" x="64" y="175" width="244" height="30"/>
+                                <rect key="frame" x="47" y="209" width="281" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TeM-rW-bwA"/>
-                                    <constraint firstAttribute="width" constant="244" id="zRc-eA-W7P"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ocm-RP-qea"/>
+                                    <constraint firstAttribute="width" constant="281" id="oar-ko-bcJ"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -74,23 +46,23 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBQ-jf-Xsn">
-                                <rect key="frame" x="65" y="213" width="244" height="30"/>
+                                <rect key="frame" x="47" y="259" width="280" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="244" id="CGQ-XE-Mmt"/>
-                                    <constraint firstAttribute="height" constant="30" id="Dfq-39-3C1"/>
+                                    <constraint firstAttribute="height" constant="30" id="9Ib-kj-LhD"/>
+                                    <constraint firstAttribute="width" constant="280" id="C3t-Bn-mSR"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BPH-4e-l6L"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN6-T4-c8y">
-                                <rect key="frame" x="111" y="412" width="150" height="34"/>
+                                <rect key="frame" x="191" y="313" width="148" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Bkg-0B-Fw8"/>
-                                    <constraint firstAttribute="height" constant="34" id="LOp-kR-vjd"/>
+                                    <constraint firstAttribute="width" constant="148" id="VMd-fJ-D2B"/>
+                                    <constraint firstAttribute="height" constant="34" id="yiC-Qe-VKY"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="botton Registro"/>
                                 <connections>
@@ -100,36 +72,26 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iLl-tT-bLk" secondAttribute="trailing" constant="67" id="2dU-VO-jUp"/>
-                            <constraint firstItem="c8V-QQ-ghe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="8jL-R1-Ro3"/>
+                            <constraint firstItem="iLl-tT-bLk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="2vc-jE-679"/>
+                            <constraint firstItem="gBQ-jf-Xsn" firstAttribute="top" secondItem="iLl-tT-bLk" secondAttribute="bottom" constant="20" id="6bH-Po-hqW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iLl-tT-bLk" secondAttribute="trailing" constant="47" id="7x9-Gm-c6L"/>
                             <constraint firstItem="G5c-4G-ckK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CBj-tX-r9f"/>
-                            <constraint firstItem="gBQ-jf-Xsn" firstAttribute="top" secondItem="iLl-tT-bLk" secondAttribute="bottom" constant="8" id="D2Z-ih-m6K"/>
-                            <constraint firstItem="tN6-T4-c8y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="DDN-Tu-HPM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gBQ-jf-Xsn" secondAttribute="trailing" constant="66" id="EQm-AG-qBy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PZD-Kb-tKc" secondAttribute="trailing" constant="113" id="J1X-ZG-GnD"/>
-                            <constraint firstItem="PZD-Kb-tKc" firstAttribute="top" secondItem="gBQ-jf-Xsn" secondAttribute="bottom" constant="12" id="TwW-DS-WiJ"/>
-                            <constraint firstItem="wsO-EK-KFi" firstAttribute="top" secondItem="c8V-QQ-ghe" secondAttribute="bottom" constant="8" id="U0U-i7-XW7"/>
-                            <constraint firstItem="c8V-QQ-ghe" firstAttribute="top" secondItem="PZD-Kb-tKc" secondAttribute="bottom" constant="46" id="VnX-c6-dUa"/>
-                            <constraint firstItem="wsO-EK-KFi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="WHz-Nr-7U0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gBQ-jf-Xsn" secondAttribute="trailing" constant="48" id="CRV-Ah-HOz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tN6-T4-c8y" secondAttribute="trailing" constant="36" id="Db6-xj-CS4"/>
+                            <constraint firstItem="PZD-Kb-tKc" firstAttribute="top" secondItem="gBQ-jf-Xsn" secondAttribute="bottom" constant="24" id="EJc-le-1E1"/>
+                            <constraint firstItem="gBQ-jf-Xsn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="GXU-jd-W7V"/>
+                            <constraint firstItem="tN6-T4-c8y" firstAttribute="top" secondItem="gBQ-jf-Xsn" secondAttribute="bottom" constant="24" id="Mys-IL-FQ3"/>
                             <constraint firstItem="G5c-4G-ckK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XB3-4t-b5v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tN6-T4-c8y" secondAttribute="trailing" constant="114" id="Y3H-fg-rgF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c8V-QQ-ghe" secondAttribute="trailing" constant="66" id="btR-jk-sEl"/>
-                            <constraint firstItem="iLl-tT-bLk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="e3N-oX-Pt1"/>
-                            <constraint firstItem="iLl-tT-bLk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="g6c-UX-wN6"/>
-                            <constraint firstItem="gBQ-jf-Xsn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="t6u-0h-fGO"/>
-                            <constraint firstItem="tN6-T4-c8y" firstAttribute="top" secondItem="wsO-EK-KFi" secondAttribute="bottom" constant="8" id="tFk-Bj-RDn"/>
+                            <constraint firstItem="PZD-Kb-tKc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="dK4-nV-zdS"/>
+                            <constraint firstItem="iLl-tT-bLk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="189" id="rd1-7E-d93"/>
                             <constraint firstItem="G5c-4G-ckK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ta6-Ev-szR"/>
                             <constraint firstItem="G5c-4G-ckK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vlK-QB-Z7d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wsO-EK-KFi" secondAttribute="trailing" constant="64" id="vrc-mv-2sL"/>
-                            <constraint firstItem="PZD-Kb-tKc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="yQy-8G-d7T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="PasswordIngresar" destination="gBQ-jf-Xsn" id="cd4-H7-DGw"/>
-                        <outlet property="PasswordRgistro" destination="wsO-EK-KFi" id="oVD-dB-yYi"/>
                         <outlet property="UserIngresar" destination="iLl-tT-bLk" id="vaR-0d-5x1"/>
-                        <outlet property="UserRegistro" destination="c8V-QQ-ghe" id="z1E-UA-mZx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

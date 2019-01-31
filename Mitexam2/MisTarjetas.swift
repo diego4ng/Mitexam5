@@ -14,7 +14,7 @@ import UIKit
 import Parse
 
 
-class MisTarjetas: UIViewController {
+class MisTarjetas: UIViewController ,UITextFieldDelegate{
     
     @IBOutlet var NombreCompleto: UITextField!
     @IBOutlet var NumTarjeta: UITextField!
@@ -23,7 +23,9 @@ class MisTarjetas: UIViewController {
     
     
     @IBAction func SaveTarjeta(_ sender: UIButton) {
-        
+        NombreCompleto.resignFirstResponder()
+        NumTarjeta.resignFirstResponder()
+        FechaExp.resignFirstResponder()
 
         do {
             
@@ -68,7 +70,9 @@ class MisTarjetas: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-      
+      self.NombreCompleto.delegate = self
+        self.NumTarjeta.delegate = self
+        self.FechaExp.delegate = self
         
         
         
@@ -94,7 +98,9 @@ class MisTarjetas: UIViewController {
         self.present(alertView, animated: true, completion:nil)
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
    
     
 }

@@ -12,7 +12,7 @@ import Parse
 import CoreLocation
 
 
-class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISearchBarDelegate,CLLocationManagerDelegate {
+class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISearchBarDelegate,CLLocationManagerDelegate,UITextFieldDelegate {
     
 //    @IBOutlet var Tarjeta_Configurada: UILabel!
 //    @IBOutlet var Tarjeta_Destinatario: UITextField!
@@ -28,6 +28,10 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
     
     @IBAction func Boton_Pagar(_ sender: Any) {
         
+        Tarjeta_Configurada.resignFirstResponder()
+        Tarjeta_Destinatario.resignFirstResponder()
+        Nombre_Destinatario.resignFirstResponder()
+        Motivo_Pago.resignFirstResponder()
         
         
         do {
@@ -76,7 +80,9 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.Tarjeta_Destinatario.delegate = self
+        self.Nombre_Destinatario.delegate = self
+        self.Motivo_Pago.delegate = self
         thePicker.delegate = self
         Motivo_Pago.inputView = thePicker
         let name = UserDefaults.standard.string(forKey: "Num_Tarjeta")
@@ -105,7 +111,9 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
     
 
         
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     
     

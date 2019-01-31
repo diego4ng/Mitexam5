@@ -17,8 +17,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var UserIngresar: UITextField!
     
     @IBOutlet var PasswordIngresar: UITextField!
-    @IBOutlet var UserRegistro: UITextField!
-    @IBOutlet var PasswordRgistro: UITextField!
+    //@IBOutlet var UserRegistro: UITextField!
+    //@IBOutlet var PasswordRgistro: UITextField!
     
     
 
@@ -27,14 +27,14 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
         UserIngresar.text = ""
         PasswordIngresar.text = ""
-        UserRegistro.text = ""
-        PasswordRgistro.text = ""
+       // UserRegistro.text = ""
+        //PasswordRgistro.text = ""
         
         
         self.UserIngresar.delegate = self
         self.PasswordIngresar.delegate = self
-        self.UserRegistro.delegate = self
-        self.PasswordRgistro.delegate = self
+       // self.UserRegistro.delegate = self
+        //self.PasswordRgistro.delegate = self
     }
     
     @IBAction func IniciaSesion(_ sender: UIButton) {
@@ -56,12 +56,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func Registro(_ sender: UIButton) {
         
-        UserRegistro.resignFirstResponder()
-        PasswordRgistro.resignFirstResponder()
+        UserIngresar.resignFirstResponder()
+        PasswordIngresar.resignFirstResponder()
         
         let user = PFUser()
-        user.username = UserRegistro.text
-        user.password = PasswordRgistro.text
+        user.username = UserIngresar.text
+        user.password = PasswordIngresar.text
         
         let sv = UIViewController.displaySpinner(onView: self.view)
         user.signUpInBackground { (success, error) in
