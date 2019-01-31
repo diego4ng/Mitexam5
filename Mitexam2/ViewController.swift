@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
     
    
@@ -29,9 +29,18 @@ class ViewController: UIViewController {
         PasswordIngresar.text = ""
         UserRegistro.text = ""
         PasswordRgistro.text = ""
+        
+        
+        self.UserIngresar.delegate = self
+        self.PasswordIngresar.delegate = self
+        self.UserRegistro.delegate = self
+        self.PasswordRgistro.delegate = self
     }
     
     @IBAction func IniciaSesion(_ sender: UIButton) {
+        
+        UserIngresar.resignFirstResponder()
+        PasswordIngresar.resignFirstResponder()
         let sv = UIViewController.displaySpinner(onView: self.view)
         PFUser.logInWithUsername(inBackground: UserIngresar.text!, password: PasswordIngresar.text!) { (user, error) in
             UIViewController.removeSpinner(spinner: sv)
@@ -46,6 +55,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func Registro(_ sender: UIButton) {
+        
+        UserRegistro.resignFirstResponder()
+        PasswordRgistro.resignFirstResponder()
         
         let user = PFUser()
         user.username = UserRegistro.text
@@ -92,22 +104,11 @@ class ViewController: UIViewController {
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+ 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        
-        return true
-        
     }
-    
-    func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        UserIngresar.resignFirstResponder()
-        PasswordIngresar.resignFirstResponder()
-        UserRegistro.resignFirstResponder()
-        PasswordRgistro.resignFirstResponder()
-        
-    }
+  
 
     
     }
