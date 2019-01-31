@@ -20,6 +20,8 @@
 		7BE34FA921FF917B0002973D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE34FA721FF917B0002973D /* LaunchScreen.storyboard */; };
 		7BE34FB121FF96830002973D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE34FB021FF96830002973D /* LoginViewController.swift */; };
 		7BE34FB321FF9A640002973D /* LoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE34FB221FF9A640002973D /* LoggedViewController.swift */; };
+		B880856F2202D21D00A3071A /* tablecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B880856E2202D21D00A3071A /* tablecell.swift */; };
+		B88085712202DB2500A3071A /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88085702202DB2500A3071A /* ChecklistItem.swift */; };
 		B8F4C4DE22000B7C00891F24 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F4C4DD22000B7C00891F24 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		87AA96F5F86F12F3824CDBA3 /* Pods-Mitexam2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mitexam2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mitexam2/Pods-Mitexam2.release.xcconfig"; sourceTree = "<group>"; };
 		8B4C4F09DBF0F7EF2F56ABBD /* Pods_Mitexam2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mitexam2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8632C5D2310ABD037C88AF /* Pods-Mitexam2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mitexam2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mitexam2/Pods-Mitexam2.debug.xcconfig"; sourceTree = "<group>"; };
+		B880856E2202D21D00A3071A /* tablecell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tablecell.swift; sourceTree = "<group>"; };
+		B88085702202DB2500A3071A /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		B8F4C4DD22000B7C00891F24 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,9 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				7BE34F9B21FF91780002973D /* AppDelegate.swift */,
+				B880856E2202D21D00A3071A /* tablecell.swift */,
 				7B1DC9B12202182700DE4700 /* Movimientos.swift */,
 				7B1DC9B3220238CE00DE4700 /* ArraysData.swift */,
 				7BC89BD0220109C600D7AA4F /* Pagar.swift */,
+				B88085702202DB2500A3071A /* ChecklistItem.swift */,
 				7BC89BCE2200B56C00D7AA4F /* MisTarjetas.swift */,
 				7BE34F9D21FF91780002973D /* ViewController.swift */,
 				7BE34FB221FF9A640002973D /* LoggedViewController.swift */,
@@ -231,7 +237,9 @@
 				B8F4C4DE22000B7C00891F24 /* NavigationController.swift in Sources */,
 				7B1DC9B4220238CE00DE4700 /* ArraysData.swift in Sources */,
 				7B1DC9B22202182700DE4700 /* Movimientos.swift in Sources */,
+				B880856F2202D21D00A3071A /* tablecell.swift in Sources */,
 				7BE34F9E21FF91780002973D /* ViewController.swift in Sources */,
+				B88085712202DB2500A3071A /* ChecklistItem.swift in Sources */,
 				7BE34FB321FF9A640002973D /* LoggedViewController.swift in Sources */,
 				7BE34FA421FF91780002973D /* Mitexam2.xcdatamodeld in Sources */,
 				7BC89BCF2200B56C00D7AA4F /* MisTarjetas.swift in Sources */,

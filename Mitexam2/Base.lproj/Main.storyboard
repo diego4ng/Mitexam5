@@ -354,7 +354,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="197" id="ACH-hS-5MM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="197" id="ACH-hS-5MM" customClass="tablecell" customModule="Mitexam2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ACH-hS-5MM" id="DT9-7Q-Vtt">
@@ -457,6 +457,13 @@
                                                 <constraint firstItem="EKS-ob-cEI" firstAttribute="top" secondItem="B2O-KA-GOe" secondAttribute="bottom" constant="23" id="zeo-E7-TxG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cell_Fecha" destination="EKS-ob-cEI" id="zpc-yT-z9p"/>
+                                            <outlet property="cell_MotivodePago" destination="B2O-KA-GOe" id="1B8-ER-eqM"/>
+                                            <outlet property="cell_NombreDestinatario" destination="mIX-p5-PAS" id="jUQ-xr-W0F"/>
+                                            <outlet property="cell_TarjetaDestinatario" destination="Dmk-6a-q6H" id="hRg-i0-Ao6"/>
+                                            <outlet property="cell_tarjetaconfigurada" destination="yc1-6V-jvM" id="XW9-2v-zhZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -14,14 +14,25 @@ import Parse
 class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  {
    
     
+    var todoList: ArrayData
+    
+    required init?(coder aDecoder: NSCoder) {
+        todoList = ArrayData()
+        super.init(coder: aDecoder)
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    
+       return todoList.FechaArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell:tablecell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! tablecell
+        
+//       let fecha = todoList.FechaArray[indexPath.row]
+//       cell = fecha.text
         
         
         return cell
@@ -34,6 +45,8 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         
 //        func userKcal(completion: ([String]) -> ()) {
 //            let query = PFQuery(className: "Movimientos")
