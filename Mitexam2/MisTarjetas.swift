@@ -69,7 +69,7 @@ class MisTarjetas: UIViewController ,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
       self.NombreCompleto.delegate = self
         self.NumTarjeta.delegate = self
         self.FechaExp.delegate = self

@@ -88,7 +88,7 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         let name = UserDefaults.standard.string(forKey: "Num_Tarjeta")
         
         Tarjeta_Configurada.text = name
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
         //  Geolocalizacion
      
        

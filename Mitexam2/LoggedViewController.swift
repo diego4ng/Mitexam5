@@ -59,8 +59,17 @@ class LoggedViewController: UIViewController {
         let currentusernow =  PFUser.current()!
         let result = currentusernow.username
         UserNameHome.text = result
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
     
 }
