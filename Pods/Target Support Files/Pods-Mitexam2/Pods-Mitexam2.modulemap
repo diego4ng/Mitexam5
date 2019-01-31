@@ -1,0 +1,6 @@
+framework module Pods_Mitexam2 {
+  umbrella header "Pods-Mitexam2-umbrella.h"
+
+  export *
+  module * { export * }
+}
