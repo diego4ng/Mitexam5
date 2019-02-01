@@ -15,9 +15,7 @@ class tablecell: UITableViewCell {
     
     
     @IBOutlet weak var cell_tarjetaconfigurada: UILabel!
-    
     @IBOutlet weak var cell_NombreDestinatario: UILabel!
-    
     @IBOutlet weak var cell_TarjetaDestinatario: UILabel!
     @IBOutlet weak var cell_MotivodePago: UILabel!
     @IBOutlet weak var cell_Fecha: UILabel!

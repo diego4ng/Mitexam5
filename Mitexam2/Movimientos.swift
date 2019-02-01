@@ -2,7 +2,7 @@
 //  Movimientos.swift
 //  Mitexam2
 //
-//  Created by Joel Lozano on 1/30/19.
+//  Created by Diego Fernandez on 31/01/19.
 //  Copyright © 2019 Diegofernandez. All rights reserved.
 //
 
@@ -16,8 +16,7 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
     var FechaArray: [String] = []
     var MotivodepagoArray: [String] = []
     var NombreDestArray: [String] = []
-    //var TarjetaDestArray: [String] = []
-   // var TarjetaConfArray: [String] = []
+    var TarjetaConfArray: [String] = []
     var TarjetaDestArray: [String] = []
     
     
@@ -26,7 +25,15 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if  self.FechaArray.count == self.MotivodepagoArray.count &&
+            self.FechaArray.count == self.NombreDestArray.count &&
+            self.FechaArray.count == self.TarjetaDestArray.count &&
+            self.FechaArray.count == self.TarjetaConfArray.count{
        return FechaArray.count
+        } else {
+            //self.movimientos_table.reloadData()
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,12 +42,14 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
      let fecha = self.FechaArray[indexPath.row]
      let motivo = self.MotivodepagoArray[indexPath.row]
      let nombred = self.NombreDestArray[indexPath.row]
-//        let tarjetad = self.TarjetaDestArray[indexPath.row]
+    let tarjetad = self.TarjetaDestArray[indexPath.row]
+        let tarjetaconf = self.TarjetaConfArray[indexPath.row]
 //
         cell.cell_Fecha.text = fecha
         cell.cell_MotivodePago.text = motivo
         cell.cell_NombreDestinatario.text = nombred
-//        cell.cell_TarjetaDestinatario.text = tarjetad
+        cell.cell_TarjetaDestinatario.text = tarjetad
+        cell.cell_tarjetaconfigurada.text = tarjetaconf
         
    
         
@@ -58,20 +67,19 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
         retrieveFecha()
         retrieveMotivoPago()
         retrieveNombreDest()
-//       retrieveTarjetaDest()
-        //retrieveTarjetaDest()
-        //retrieveTarjetaConf()
+        retrieveTarjetaDest()
+        
+        retrieveTarjetaConf()
 self.movimientos_table.reloadData()
 
     }
-    
-    
+//Obtiene la fecha de Back4app
+ ////////////////////////////////////////////////////////////////////////////////////
     func retrieveFecha() {
         
         let query = PFQuery(className: "Movimientos")
         query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
         query.findObjectsInBackground(block: { (objects, error) in
-            
             if error == nil{
                 //no hay errot
                 if let returnedobjects = objects {
@@ -82,22 +90,16 @@ self.movimientos_table.reloadData()
                         print(self.FechaArray)
                         print(self.FechaArray.count)
                     }
-                    
                 }
                 self.movimientos_table.reloadData()
             }})
-    
-    
 }
-
-    
-    
+   // Obtiene la Motivo de Pago de Back4app
+////////////////////////////////////////////////////////////////////////////////////
     func retrieveMotivoPago() {
-        
         let query = PFQuery(className: "Movimientos")
         query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
         query.findObjectsInBackground(block: { (objects, error) in
-
             if error == nil{
                 //no hay errot
                 if let returnedobjects = objects {
@@ -107,22 +109,17 @@ self.movimientos_table.reloadData()
                         print(object["MotivodePago"] as! String)
                         print(self.MotivodepagoArray)
                         print(self.MotivodepagoArray.count)
-
                     }
-
                 }
                 self.movimientos_table.reloadData()
             }})
-
-
     }
-    
+ //   Obtiene el Nombre Destinatario de Back4app
+////////////////////////////////////////////////////////////////////////////////////
         func retrieveNombreDest() {
-            
             let query = PFQuery(className: "Movimientos")
             query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
             query.findObjectsInBackground(block: { (objects, error) in
-
                 if error == nil{
                     //no hay errot
                     if let returnedobjects = objects {
@@ -133,59 +130,57 @@ self.movimientos_table.reloadData()
                             print(self.NombreDestArray)
                             print(self.NombreDestArray.count)
                         }
-
                     }
                     self.movimientos_table.reloadData()
                 }})
-
-
         }
-
+//   Obtiene el Tarjeta Destinatario de Back4app
+////////////////////////////////////////////////////////////////////////////////////
     
-//    func retrieveTarjetaDest() {
-//        let TarjetaDestArray: [String] = []
-//        let query = PFQuery(className: "Movimientos")
-//        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
-//        query.findObjectsInBackground(block: { (objects, error) in
-//
-//            if error == nil{
-//                //no hay errot
-//                if let returnedobjects = objects {
-//
-//                    for object in returnedobjects{
-//                        self.TarjetaDestArray.append(object["TarjetaDestinatario"] as! String)
-//                        print(object["TarjetaDestinatario"] as! String)
-//
-//                    }
-//
-//                }
-//                self.movimientos_table.reloadData()
-//            }})
-//
-//
-//    }
-//    func retrieveTarjetaDest() {
-//        let TarjetaDestArray: [String] = []
-//        let query = PFQuery(className: "Movimientos")
-//        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
-//        query.findObjectsInBackground(block: { (objects, error) in
-//
-//            if error == nil{
-//                //no hay errot
-//                if let returnedobjects = objects {
-//
-//                    for object in returnedobjects{
-//                        self.TarjetaDestArray.append(object["TarjetaDestinatario"] as! String)
-//                        print(object["TarjetaDestinatario"] as! String)
-//
-//                    }
-//
-//                }
-//                self.movimientos_table.reloadData()
-//            }})
-//
-//
-//    }
+    func retrieveTarjetaDest() {
+        
+        let query = PFQuery(className: "Movimientos")
+        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+        query.findObjectsInBackground(block: { (objects, error) in
+
+            if error == nil{
+                //no hay errot
+                if let returnedobjects = objects {
+
+                    for object in returnedobjects{
+                        self.TarjetaConfArray.append(object["TarjetaConfigurada"] as! String)
+                        print(object["TarjetaConfigurada"] as! String)
+
+                    }
+
+                }
+                self.movimientos_table.reloadData()
+            }})
+  }
+ //   Obtiene el Nombre Destinatario de Back4app
+    
+    func retrieveTarjetaConf() {
+        
+        let query = PFQuery(className: "Movimientos")
+        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+        query.findObjectsInBackground(block: { (objects, error) in
+
+            if error == nil{
+                //no hay errot
+                if let returnedobjects = objects {
+
+                    for object in returnedobjects{
+                        self.TarjetaDestArray.append(object["TarjetaDestinatario"] as! String)
+                        print(object["TarjetaDestinatario"] as! String)
+
+                    }
+
+                }
+                self.movimientos_table.reloadData()
+            }})
+
+
+    }
    
 
 }

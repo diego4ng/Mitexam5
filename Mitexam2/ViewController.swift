@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Mitexam2
 //
-//  Created by Joel Lozano on 1/28/19.
+//  Created by Diego Fernandez on 31/01/19.
 //  Copyright © 2019 Diegofernandez. All rights reserved.
 //
 

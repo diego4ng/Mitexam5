@@ -7,11 +7,20 @@
 //
 
 import Foundation
+import Parse
+    
 
-class ChecklistItem {
     
-    var text = ""
+class Datos {
     
+    var fecha = ""
+    var motivodepago = ""
+    var nombredest = ""
+    var tarjetades = ""
+    
+
     
 }
+
+
 
