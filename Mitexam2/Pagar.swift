@@ -43,14 +43,14 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         
        // Manda la alerta cuando el campo es menor a 20 caracteres
         var tarjetadest1 = Tarjeta_Destinatario.text
-        if (tarjetadest1?.characters.count)! <= 20 {
+        if (tarjetadest1?.characters.count)! <= 14 {
             let alertController = UIAlertController(title: "Atención", message: "Numero de Tarjeta Destinatario Incompleto", preferredStyle: .alert)
             let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
                 print("You've pressed default");
             }
             alertController.addAction(action1)
             self.present(alertController, animated: true, completion: nil)
-        }
+        } else{
         
         
         
@@ -87,6 +87,15 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
             call.saveInBackground()
         }         catch{}
         
+            
+            let alertController2 = UIAlertController(title: "Exitoso", message: "Pago completado", preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "Aceptar", style: .cancel) { (action:UIAlertAction) in
+                print("You've pressed default")
+                self.loadHomeScreen();
+            }
+            alertController2.addAction(action1)
+            self.present(alertController2, animated: true, completion: nil)
+        }
     }
     
     
@@ -161,6 +170,12 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         return dateFormatter.string(from: date) as String
     }
     
+    
+    func loadHomeScreen(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loggedInViewController = storyBoard.instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
+        self.present(loggedInViewController, animated: true, completion: nil)
+    }
 }
 
 
