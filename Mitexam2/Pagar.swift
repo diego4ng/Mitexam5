@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 import Parse
 import CoreLocation
+import MapKit
 
 
 class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISearchBarDelegate,CLLocationManagerDelegate,UITextFieldDelegate {
+    
+    var region =  MKCoordinateRegion()
+    var manager = CLLocationManager()
+    var latitud : CLLocationDegrees!
+    var longitud : CLLocationDegrees!
     
 //    @IBOutlet var Tarjeta_Configurada: UILabel!
 //    @IBOutlet var Tarjeta_Destinatario: UITextField!
@@ -33,6 +39,10 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         Nombre_Destinatario.resignFirstResponder()
         Motivo_Pago.resignFirstResponder()
         
+       var textocoordenadas = "lat: \(latitud!) \n & long: \(longitud!)"
+        let localizacion = CLLocationCoordinate2DMake(latitud, longitud)
+        let span = MKCoordinateSpan(latitudeDelta: 0.00110, longitudeDelta: 0.010)
+        let region = MKCoordinateRegion(center: localizacion, span: span)
         
         do {
             
@@ -56,7 +66,7 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
             call["NombreDestinatario"] = Nombre_Destinatario.text
             call["MotivodePago"] = Motivo_Pago.text
             call["Fecha"] = obtenerfecha()
-            call["Coordenadas"] = "00000,00000"
+            call["Coordenadas"] = textocoordenadas
             
             
             
@@ -74,7 +84,14 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         
     }
     
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first{
+            self.latitud = location.coordinate.latitude
+            self.longitud = location.coordinate.longitude
+            
+            
+        }
+    }
     
     
     
@@ -91,9 +108,12 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         navigationController?.navigationBar.prefersLargeTitles = true
         //  Geolocalizacion
      
-       
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.startUpdatingLocation()
             
-            
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
                     
             
             
@@ -187,4 +207,5 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
     
    
 }
+
 

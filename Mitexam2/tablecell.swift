@@ -20,4 +20,5 @@ class tablecell: UITableViewCell {
     @IBOutlet weak var cell_MotivodePago: UILabel!
     @IBOutlet weak var cell_Fecha: UILabel!
     
+    @IBOutlet weak var cell_coordenadas: UILabel!
 }

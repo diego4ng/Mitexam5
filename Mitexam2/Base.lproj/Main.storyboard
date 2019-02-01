@@ -468,6 +468,7 @@
                                             <outlet property="cell_MotivodePago" destination="B2O-KA-GOe" id="1B8-ER-eqM"/>
                                             <outlet property="cell_NombreDestinatario" destination="mIX-p5-PAS" id="jUQ-xr-W0F"/>
                                             <outlet property="cell_TarjetaDestinatario" destination="Dmk-6a-q6H" id="hRg-i0-Ao6"/>
+                                            <outlet property="cell_coordenadas" destination="6Ux-yz-SwW" id="zLY-0t-3pE"/>
                                             <outlet property="cell_tarjetaconfigurada" destination="yc1-6V-jvM" id="XW9-2v-zhZ"/>
                                         </connections>
                                     </tableViewCell>

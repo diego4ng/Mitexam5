@@ -18,6 +18,7 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
     var NombreDestArray: [String] = []
     var TarjetaConfArray: [String] = []
     var TarjetaDestArray: [String] = []
+    var coordenadasArray: [String] = []
     
     
     @IBOutlet weak var movimientos_table: UITableView!
@@ -28,6 +29,7 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
         if  self.FechaArray.count == self.MotivodepagoArray.count &&
             self.FechaArray.count == self.NombreDestArray.count &&
             self.FechaArray.count == self.TarjetaDestArray.count &&
+            self.FechaArray.count == self.coordenadasArray.count &&
             self.FechaArray.count == self.TarjetaConfArray.count{
        return FechaArray.count
         } else {
@@ -44,12 +46,14 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
      let nombred = self.NombreDestArray[indexPath.row]
     let tarjetad = self.TarjetaDestArray[indexPath.row]
         let tarjetaconf = self.TarjetaConfArray[indexPath.row]
+        let corde = self.coordenadasArray[indexPath.row]
 //
         cell.cell_Fecha.text = fecha
         cell.cell_MotivodePago.text = motivo
         cell.cell_NombreDestinatario.text = nombred
         cell.cell_TarjetaDestinatario.text = tarjetad
         cell.cell_tarjetaconfigurada.text = tarjetaconf
+        cell.cell_coordenadas.text = corde
         
    
         
@@ -68,7 +72,7 @@ class Movimientos: UIViewController,UITableViewDataSource ,UITableViewDelegate  
         retrieveMotivoPago()
         retrieveNombreDest()
         retrieveTarjetaDest()
-        
+        retrieveCoordenadas()
         retrieveTarjetaConf()
 self.movimientos_table.reloadData()
 
@@ -180,6 +184,31 @@ self.movimientos_table.reloadData()
             }})
 
 
+    }
+    
+    //   Obtiene el Nombre Coordenadas de Back4app
+    
+    func retrieveCoordenadas() {
+        
+        let query = PFQuery(className: "Movimientos")
+        query.whereKey("nombre", equalTo: (PFUser.current()?.username!)!)
+        query.findObjectsInBackground(block: { (objects, error) in
+            
+            if error == nil{
+                //no hay errot
+                if let returnedobjects = objects {
+                    
+                    for object in returnedobjects{
+                        self.coordenadasArray.append(object["Coordenadas"] as! String)
+                        print(object["Coordenadas"] as! String)
+                        
+                    }
+                    
+                }
+                self.movimientos_table.reloadData()
+            }})
+        
+        
     }
    
 
