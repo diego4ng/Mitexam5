@@ -23,6 +23,21 @@ class MisTarjetas: UIViewController ,UITextFieldDelegate{
     
     
     @IBAction func SaveTarjeta(_ sender: UIButton) {
+        
+        if NombreCompleto.text == "" || NumTarjeta.text == "" || FechaExp.text == "" {
+            let alertController = UIAlertController(title: "Atención", message: "Dejaste un Campo Vacio", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
+                print("You've pressed default");
+            }
+            
+            alertController.addAction(action1)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        if (NumTarjeta.text?.count)! <= 20 {
+            print("falta taxto")
+        }
         NombreCompleto.resignFirstResponder()
         NumTarjeta.resignFirstResponder()
         FechaExp.resignFirstResponder()

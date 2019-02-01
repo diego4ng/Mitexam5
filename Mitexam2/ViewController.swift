@@ -39,6 +39,17 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func IniciaSesion(_ sender: UIButton) {
         
+        
+        if UserIngresar.text == "" || PasswordIngresar.text == ""  {
+            let alertController = UIAlertController(title: "Atención", message: "Completa los campos", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction(title: "Cerrar", style: .cancel) { (action:UIAlertAction) in
+                print("You've pressed default");
+            }
+            
+            alertController.addAction(action1)
+            self.present(alertController, animated: true, completion: nil)
+        }
         UserIngresar.resignFirstResponder()
         PasswordIngresar.resignFirstResponder()
         let sv = UIViewController.displaySpinner(onView: self.view)

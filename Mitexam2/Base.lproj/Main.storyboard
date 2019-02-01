@@ -285,9 +285,12 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-in-Ev3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbp-in-Ev3">
                                 <rect key="frame" x="173" y="392" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="XtM-kR-gaW"/>
+                                    <constraint firstAttribute="height" constant="30" id="ala-lu-KP3"/>
+                                </constraints>
                                 <state key="normal" title="Pagar"/>
                                 <connections>
                                     <action selector="Boton_Pagar:" destination="gN6-6G-nQZ" eventType="touchUpInside" id="F0h-kN-AGd"/>
@@ -300,6 +303,7 @@
                             <constraint firstItem="Pn5-0U-Wff" firstAttribute="trailing" secondItem="RHj-Di-aEr" secondAttribute="trailing" constant="32" id="28K-Bf-9YY"/>
                             <constraint firstItem="qXV-mv-rXD" firstAttribute="top" secondItem="Pn5-0U-Wff" secondAttribute="top" id="8K4-nq-rxF"/>
                             <constraint firstItem="Pn5-0U-Wff" firstAttribute="trailing" secondItem="bGU-4Y-0nS" secondAttribute="trailing" constant="237" id="8k5-jD-G3Z"/>
+                            <constraint firstItem="vbp-in-Ev3" firstAttribute="leading" secondItem="Pn5-0U-Wff" secondAttribute="leading" constant="173" id="C8y-UT-rBh"/>
                             <constraint firstItem="0wH-Ej-aDH" firstAttribute="leading" secondItem="Pn5-0U-Wff" secondAttribute="leading" constant="43" id="E51-p0-MVu"/>
                             <constraint firstItem="bGU-4Y-0nS" firstAttribute="leading" secondItem="Pn5-0U-Wff" secondAttribute="leading" constant="43" id="HyP-te-xH7"/>
                             <constraint firstItem="Pn5-0U-Wff" firstAttribute="trailing" secondItem="0wH-Ej-aDH" secondAttribute="trailing" constant="183" id="JLZ-NN-gr7"/>
@@ -320,6 +324,7 @@
                             <constraint firstItem="Pn5-0U-Wff" firstAttribute="trailing" secondItem="x2j-mE-eh0" secondAttribute="trailing" constant="32" id="kgq-bY-TT1"/>
                             <constraint firstItem="0wH-Ej-aDH" firstAttribute="top" secondItem="x2j-mE-eh0" secondAttribute="bottom" constant="32" id="kvw-fM-TtX"/>
                             <constraint firstItem="qXV-mv-rXD" firstAttribute="leading" secondItem="Pn5-0U-Wff" secondAttribute="leading" id="lec-M2-XYJ"/>
+                            <constraint firstItem="vbp-in-Ev3" firstAttribute="top" secondItem="9pP-12-31e" secondAttribute="bottom" constant="18" id="m24-dI-HH6"/>
                             <constraint firstItem="kuk-f6-zvc" firstAttribute="top" secondItem="VBg-DM-0b0" secondAttribute="bottom" constant="1" id="qLU-gs-jN0"/>
                             <constraint firstItem="Pn5-0U-Wff" firstAttribute="trailing" secondItem="VBg-DM-0b0" secondAttribute="trailing" constant="173" id="rr8-go-hcV"/>
                             <constraint firstItem="VBg-DM-0b0" firstAttribute="leading" secondItem="Pn5-0U-Wff" secondAttribute="leading" constant="43" id="thR-HO-0u0"/>
@@ -638,11 +643,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fondo" width="375.1199951171875" height="667"/>
-        <image name="botton Movimientp" width="106.80000305175781" height="108"/>
-        <image name="botton Registro" width="106.80000305175781" height="24.719999313354492"/>
-        <image name="botton Tarjetas" width="106.80000305175781" height="105.36000061035156"/>
-        <image name="botton iniciasesion" width="97.680000305175781" height="23.760000228881836"/>
-        <image name="botton pagar" width="106.80000305175781" height="106.08000183105469"/>
+        <image name="Fondo" width="781" height="1389"/>
+        <image name="botton Movimientp" width="222" height="225"/>
+        <image name="botton Registro" width="148" height="34"/>
+        <image name="botton Tarjetas" width="222" height="219"/>
+        <image name="botton iniciasesion" width="203" height="49"/>
+        <image name="botton pagar" width="222" height="221"/>
     </resources>
 </document>
