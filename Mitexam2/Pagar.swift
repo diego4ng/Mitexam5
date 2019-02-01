@@ -39,10 +39,29 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         Nombre_Destinatario.resignFirstResponder()
         Motivo_Pago.resignFirstResponder()
         
-       var textocoordenadas = "lat: \(latitud!) \n & long: \(longitud!)"
+        
+        var tarjetadest1 = Tarjeta_Destinatario.text
+        
+       
+        
+        if (tarjetadest1?.characters.count)! <= 20 {
+            let alertController = UIAlertController(title: "Atención", message: "Numero de Tarjeta Destinatario Incompleto", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
+                print("You've pressed default");
+            }
+            alertController.addAction(action1)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        
+        
+        
+        let textocoordenadas = "lat: \(latitud!) \n & long: \(longitud!)"
         let localizacion = CLLocationCoordinate2DMake(latitud, longitud)
         let span = MKCoordinateSpan(latitudeDelta: 0.00110, longitudeDelta: 0.010)
-        let region = MKCoordinateRegion(center: localizacion, span: span)
+        _ = MKCoordinateRegion(center: localizacion, span: span)
+        
         
         do {
             
@@ -67,16 +86,17 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
             call["MotivodePago"] = Motivo_Pago.text
             call["Fecha"] = obtenerfecha()
             call["Coordenadas"] = textocoordenadas
-            
-            
-            
-            
+   
             //save
             call.saveInBackground()
             
             
             
         }
+            
+            
+            
+            
             
         catch{
             //couldnt get the contact

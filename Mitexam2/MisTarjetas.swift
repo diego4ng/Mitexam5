@@ -34,8 +34,19 @@ class MisTarjetas: UIViewController ,UITextFieldDelegate{
             alertController.addAction(action1)
             self.present(alertController, animated: true, completion: nil)
         }
-        
-        if (NumTarjeta.text?.count)! <= 20 {
+        var cuentacharacter = NumTarjeta.text
+        if (cuentacharacter?.characters.count)! <= 20 {
+            let alertController = UIAlertController(title: "Atención", message: "Numero de Tarjeta Incompleto", preferredStyle: .alert)
+            
+            let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
+                print("You've pressed default");
+            }
+            
+            alertController.addAction(action1)
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+            
             print("falta taxto")
         }
         NombreCompleto.resignFirstResponder()
