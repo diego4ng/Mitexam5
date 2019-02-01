@@ -253,7 +253,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuk-f6-zvc">
                                 <rect key="frame" x="43" y="277" width="300" height="30"/>
@@ -533,7 +533,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fecha de Expiración" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-Yk-30a">
                                 <rect key="frame" x="34" y="254" width="262" height="30"/>
@@ -543,7 +543,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del Tarjeta Habiente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssI-OK-1Gl">
                                 <rect key="frame" x="38" y="89" width="219" height="21"/>
@@ -644,11 +644,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fondo" width="781" height="1389"/>
-        <image name="botton Movimientp" width="222" height="225"/>
-        <image name="botton Registro" width="148" height="34"/>
-        <image name="botton Tarjetas" width="222" height="219"/>
-        <image name="botton iniciasesion" width="203" height="49"/>
-        <image name="botton pagar" width="222" height="221"/>
+        <image name="Fondo" width="375.1199951171875" height="667"/>
+        <image name="botton Movimientp" width="106.80000305175781" height="108"/>
+        <image name="botton Registro" width="106.80000305175781" height="24.719999313354492"/>
+        <image name="botton Tarjetas" width="106.80000305175781" height="105.36000061035156"/>
+        <image name="botton iniciasesion" width="97.680000305175781" height="23.760000228881836"/>
+        <image name="botton pagar" width="106.80000305175781" height="106.08000183105469"/>
     </resources>
 </document>
