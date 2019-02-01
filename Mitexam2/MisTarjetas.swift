@@ -35,20 +35,27 @@ class MisTarjetas: UIViewController ,UITextFieldDelegate{
             self.present(alertController, animated: true, completion: nil)
         }
         var cuentacharacter = NumTarjeta.text
-        if (cuentacharacter?.characters.count)! <= 20 {
+        if (cuentacharacter?.characters.count)! <= 16 {
             let alertController = UIAlertController(title: "Atención", message: "Numero de Tarjeta Incompleto", preferredStyle: .alert)
             
             let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
                 print("You've pressed default");
             }
-            
             alertController.addAction(action1)
             self.present(alertController, animated: true, completion: nil)
-            
-            
-            
-            print("falta taxto")
         }
+        
+//        var exptarjeta = FechaExp.text
+//        if (exptarjeta?.characters.count)! >= 5 && (exptarjeta?.characters.count)! <= 3 {
+//            let alertController = UIAlertController(title: "Atención", message: "Fecha de Expiración Incorrecta", preferredStyle: .alert)
+//
+//            let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
+//                print("You've pressed default");
+//            }
+//            alertController.addAction(action1)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
+        
         NombreCompleto.resignFirstResponder()
         NumTarjeta.resignFirstResponder()
         FechaExp.resignFirstResponder()

@@ -85,8 +85,7 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
             call["Coordenadas"] = textocoordenadas
             //save
             call.saveInBackground()
-        }
-        catch{}
+        }         catch{}
         
     }
     
