@@ -34,19 +34,17 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
     
     @IBAction func Boton_Pagar(_ sender: Any) {
         
+       // Oculta los campos cuando tocamos cualquier parte de la pantalla
         Tarjeta_Configurada.resignFirstResponder()
         Tarjeta_Destinatario.resignFirstResponder()
         Nombre_Destinatario.resignFirstResponder()
         Motivo_Pago.resignFirstResponder()
         
         
+       // Manda la alerta cuando el campo es menor a 20 caracteres
         var tarjetadest1 = Tarjeta_Destinatario.text
-        
-       
-        
         if (tarjetadest1?.characters.count)! <= 20 {
             let alertController = UIAlertController(title: "Atención", message: "Numero de Tarjeta Destinatario Incompleto", preferredStyle: .alert)
-            
             let action1 = UIAlertAction(title: "Cancelar", style: .cancel) { (action:UIAlertAction) in
                 print("You've pressed default");
             }
@@ -56,7 +54,7 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         
         
         
-        
+        // Guarda las coordenadas de donde se realizo la compra
         let textocoordenadas = "lat: \(latitud!) \n & long: \(longitud!)"
         let localizacion = CLLocationCoordinate2DMake(latitud, longitud)
         let span = MKCoordinateSpan(latitudeDelta: 0.00110, longitudeDelta: 0.010)
@@ -70,14 +68,13 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
             let result = currentusernow.username
             
             
-            
+            // Guarda en la Clase Movimientos , los siguientes atributos
             let query = PFQuery(className: "_User")
             query.whereKey("username", equalTo: result!)
             let contact = try query.getFirstObject()
             print(contact)
             //create a new object
             let call = PFObject(className: "Movimientos")
-            
             call["nombre"] = result!
              call["Usuario"] = contact
             call["TarjetaConfigurada"] = Tarjeta_Configurada.text
@@ -86,30 +83,18 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
             call["MotivodePago"] = Motivo_Pago.text
             call["Fecha"] = obtenerfecha()
             call["Coordenadas"] = textocoordenadas
-   
             //save
             call.saveInBackground()
-            
-            
-            
         }
-            
-            
-            
-            
-            
-        catch{
-            //couldnt get the contact
-        }
+        catch{}
         
     }
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first{
             self.latitud = location.coordinate.latitude
             self.longitud = location.coordinate.longitude
-            
-            
         }
     }
     
@@ -127,53 +112,18 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         Tarjeta_Configurada.text = name
         navigationController?.navigationBar.prefersLargeTitles = true
         //  Geolocalizacion
-     
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
-            
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-                    
-            
-            
-            
-            
-            
-        
-            
-        
-        
-        
-        
-        
     }
-    
 
-        
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-     let myPickerData = [String](arrayLiteral: "Agua", "Luz", "Telefono", "Gas","Otro")
+ 
+     let myPickerData = [String](arrayLiteral: "Agua", "Luz","Telefono","Renta","Colegiatuta", "Gas","Otro")
 
     //protocolo del label picker obligatrio
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -193,15 +143,10 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         Motivo_Pago.text = myPickerData[row] as String
         print(Motivo_Pago.text!)
     }
-
-    
-    
-    
     let datepick = UIDatePicker()
     let thePicker = UIPickerView()
 
-    
-    
+
     func obtenerfecha() -> String{
         let date = Date()
         
@@ -217,15 +162,6 @@ class Pagar: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UISe
         return dateFormatter.string(from: date) as String
     }
     
-    
-    
-    
-    
-    
-    
-   
-    
-   
 }
 
 

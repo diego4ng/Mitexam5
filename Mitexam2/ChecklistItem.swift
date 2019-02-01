@@ -17,9 +17,6 @@ class Datos {
     var motivodepago = ""
     var nombredest = ""
     var tarjetades = ""
-    
-
-    
 }
 
 
